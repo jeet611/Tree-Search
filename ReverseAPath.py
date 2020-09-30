@@ -1,9 +1,7 @@
-# Python3 code to demonstrate insert 
-# operation in binary search tree 
 class Node: 
 
 	# Constructor to create a new node 
-	def __init__(self, data): 
+	def _init_(self, data): 
 		self.key = data 
 		self.left = None
 		self.right = None
@@ -83,7 +81,19 @@ def insert(node, key):
 	if node == None: 
 		return Node(key) 
 
-		# Let us create following BST 
+	# Otherwise, recur down the tree */ 
+	if key < node.key: 
+		node.left = insert(node.left, key) 
+	elif key > node.key: 
+		node.right = insert(node.right, key) 
+
+	# return the (unchanged) node pointer */ 
+	return node 
+	
+# Driver Code 
+if _name_ == '_main_': 
+	
+	# Let us create following BST 
 	#			 50 
 	#		 /	 \ 
 	#		 30	 70 
@@ -114,5 +124,3 @@ def insert(node, key):
 
 	# print inorder of reverse path tree 
 	inorder(root)	 
-	
-# This code is contributed by PranchalK 
