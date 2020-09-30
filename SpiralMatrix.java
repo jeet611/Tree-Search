@@ -33,6 +33,17 @@ class GFG {
 				} 
 				m--; 
 			} 
+
+			// Print the first column from the remaining columns */ 
+			if (l < n) { 
+				for (i = m - 1; i >= k; --i) { 
+					System.out.print(a[i][l] + " "); 
+				} 
+				l++; 
+			} 
+		} 
+	} 
+
 	// driver program 
 	public static void main(String[] args) 
 	{ 
@@ -44,5 +55,3 @@ class GFG {
 		spiralPrint(R, C, a); 
 	} 
 } 
-
-// Contributed by Pramod Kumar 
