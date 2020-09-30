@@ -1,4 +1,3 @@
-// Java program to convert a given Binary Tree to Doubly Linked List 
 
 /* Structure for tree and Linked List */
 class Node { 
@@ -23,6 +22,16 @@ class BinaryTree {
 	// Binary tree to Doubly Linked List 
 	void BToDLL(Node root) 
 	{ 
+		// Base cases 
+		if (root == null) 
+			return; 
+
+		// Recursively convert right subtree 
+		BToDLL(root.right); 
+
+		// insert root into DLL 
+		root.right = head; 
+
 		// Change left pointer of previous head 
 		if (head != null) 
 			head.left = root; 
@@ -72,5 +81,3 @@ class BinaryTree {
 		tree.printList(tree.head); 
 	} 
 } 
-
-// This code has been contributed by Mayank Jaiswal(mayank_24) 
